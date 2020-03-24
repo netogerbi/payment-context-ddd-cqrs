@@ -7,6 +7,7 @@ namespace paymentContext.domain.entities
 {
     public class Student : Entity
     {
+        private IList<string> Notifications;
         private IList<Subscription> _subscriptions;
         
         public Student(Name name, Document document, Email email)
@@ -15,6 +16,7 @@ namespace paymentContext.domain.entities
             this.Document = document;
             this.Email = email;
             _subscriptions = new List<Subscription>();
+
         }
 
         public Name Name { get; set; }
