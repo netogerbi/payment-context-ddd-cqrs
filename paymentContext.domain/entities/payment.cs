@@ -1,4 +1,6 @@
 using System;
+using paymentContext.domain.ValueObjects;
+
 namespace paymentContext.domain.entities
 {
     public abstract class Payment
@@ -8,17 +10,17 @@ namespace paymentContext.domain.entities
             DateTime ExpireDate, 
             decimal Total, 
             decimal TotalPaid, 
-            string BillingAddress, 
+            Address address, 
             string Owner, 
-            string Document, 
-            string Email)
+            Document Document, 
+            Email Email)
         {
             this.Number = Guid.NewGuid().ToString().Replace("-", "").Substring(0, 10).ToUpper();
             this.PaidDate = PaidDate;
             this.ExpireDate = ExpireDate;
             this.Total = Total;
             this.TotalPaid = TotalPaid;
-            this.BillingAddress = BillingAddress;
+            this.Address = address;
             this.Owner = Owner;
             this.Document = Document;
             this.Email = Email;
@@ -29,9 +31,9 @@ namespace paymentContext.domain.entities
         public DateTime ExpireDate { get; private set; }
         public decimal Total { get; private set; }
         public decimal TotalPaid { get; private set; }
-        public string BillingAddress { get; private set; }
+        public Address Address { get; private set; }
         public string Owner { get; private set; }
-        public string Document { get; private set; }
-        public string Email { get; private set; }
+        public Document Document { get; private set; }
+        public Email Email { get; private set; }
     }
 }

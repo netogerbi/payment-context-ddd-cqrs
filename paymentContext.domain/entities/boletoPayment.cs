@@ -1,8 +1,8 @@
 using System;
+using paymentContext.domain.ValueObjects;
+
 namespace paymentContext.domain.entities
 {
-    
-
     public abstract class BoletoPayment : Payment
     {
         protected BoletoPayment(
@@ -12,15 +12,15 @@ namespace paymentContext.domain.entities
             DateTime ExpireDate, 
             decimal Total, 
             decimal TotalPaid, 
-            string BillingAddress, 
+            Address address, 
             string Owner, 
-            string Document, 
-            string Email) : base(
+            Document Document, 
+            Email Email) : base(
                 PaidDate, 
                 ExpireDate, 
                 Total, 
                 TotalPaid, 
-                BillingAddress, 
+                address, 
                 Owner, 
                 Document, 
                 Email)
